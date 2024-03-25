@@ -10,6 +10,6 @@ bubblewrap
 python3
 bash-completion
 kbd
-grub
+grub-efi
 dosfstools
 btrfs-progs
