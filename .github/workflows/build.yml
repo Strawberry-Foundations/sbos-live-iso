@@ -16,10 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: De-bloat stock image
-      run: |
-        rm -r /run/host/usr/share/dotnet
-        rm -r /run/host${{ runner.tool_cache }}
+    # - name: De-bloat stock image
+    #   run: |
+    #     rm -r /run/host/usr/share/dotnet
+    #     rm -r /run/host${{ runner.tool_cache }}
 
     - name: Install needed packages
       run: apt update && apt install debootstrap sudo -y
