@@ -1,0 +1,33 @@
+name: StrawberryOS snapshot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:12
+      volumes:
+        - /proc:/proc
+        - /:/run/host
+      options: --privileged -it
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: De-bloat stock image
+      run: |
+        rm -r /run/host/usr/share/dotnet
+        rm -r /run/host${{ runner.tool_cache }}
+
+    - name: Install needed packages
+      run: apt update && apt install debootstrap -y
+
+    - name: Build ISO
+      run: ./build.sh
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: StrawberryOS snapshot
+        path: builds/

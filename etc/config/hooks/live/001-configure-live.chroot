@@ -1,0 +1,2 @@
+wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/os-bootstrap -O /usr/local/bin/os-bootstrap
+chmod a+x /usr/local/bin/os-bootstrap

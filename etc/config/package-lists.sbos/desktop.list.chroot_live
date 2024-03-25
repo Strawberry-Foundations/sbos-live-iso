@@ -1,0 +1,13 @@
+rsync
+locales
+zstd
+wget
+curl
+neofetch
+console-data
+debootstrap
+bubblewrap
+python3
+bash-completion
+kbd
+grub
