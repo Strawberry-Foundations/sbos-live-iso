@@ -21,6 +21,7 @@ jobs:
         cd /
         git clone https://github.com/Strawberry-Foundations/sbos-live-iso
         cd sbos-live-iso
+        chmod a+x /sbos-live-iso/builds/etc/auto/config
         bash ./build.sh
         wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/kvm-boot -O /sbos-live-iso/builds/start.sh
         chmod a+x /sbos-live-iso/builds/start.sh
