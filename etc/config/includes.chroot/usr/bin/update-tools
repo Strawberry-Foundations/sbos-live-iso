@@ -1,0 +1,7 @@
+#!/bin/bash
+
+wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/os-bootstrap -O /usr/local/bin/os-bootstrap
+chmod a+x /usr/local/bin/os-bootstrap
+
+wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/sbos-chroot -O /usr/local/bin/sbos-chroot
+chmod a+x /usr/local/bin/sbos-chroot
