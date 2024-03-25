@@ -11,3 +11,5 @@ python3
 bash-completion
 kbd
 grub
+dosfstools
+btrfs-progs
