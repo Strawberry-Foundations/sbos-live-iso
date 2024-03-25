@@ -25,7 +25,7 @@ jobs:
       run: apt update && apt install debootstrap -y
 
     - name: Build ISO
-      run: ./build.sh
+      run: sudo ./build.sh
 
     - uses: actions/upload-artifact@v4
       with:
