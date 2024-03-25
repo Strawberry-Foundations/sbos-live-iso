@@ -23,6 +23,7 @@ jobs:
         cd sbos-live-iso
         bash ./build.sh
         wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/kvm-boot -O /sbos-live-iso/builds/start.sh
+        chmod a+x /sbos-live-iso/builds/start.sh
 
     - uses: actions/upload-artifact@v4
       with:
