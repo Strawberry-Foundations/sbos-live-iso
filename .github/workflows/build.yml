@@ -25,7 +25,7 @@ jobs:
       run: apt update && apt install debootstrap sudo -y
 
     - name: Build ISO
-      run: sudo ./ghbuild.sh
+      run: sudo bash ./ghbuild.sh
 
     - uses: actions/upload-artifact@v4
       with:
