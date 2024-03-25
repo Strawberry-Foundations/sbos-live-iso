@@ -6,26 +6,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # container:
-    #   image: ghcr.io/vanilla-os/pico:main
-    #   volumes:
-    #     - /proc:/proc
-    #     - /:/run/host
-    #   options: --privileged -it
+    container:
+      image: debian:latest
+      options: --privileged -it
 
     steps:
     - uses: actions/checkout@v4
     
-    # - name: De-bloat stock image
-    #   run: |
-    #     rm -r /run/host/usr/share/dotnet
-    #     rm -r /run/host${{ runner.tool_cache }}
-
     - name: Install needed packages
-      run: sudo apt update && sudo apt install debootstrap -y
+      run: apt update && apt install debootstrap -y
 
     - name: Build ISO
-      run: sudo bash ./ghbuild.sh
+      run: |
+        cd /
+        git clone https://github.com/Strawberry-Foundations/sbos-live-iso
+        cd sbos-live-iso
+        bash ./ghbuild.sh
 
     - uses: actions/upload-artifact@v4
       with:
