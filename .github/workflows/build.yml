@@ -22,7 +22,7 @@ jobs:
     #     rm -r /run/host${{ runner.tool_cache }}
 
     - name: Install needed packages
-      run: sudo apt update && apt install debootstrap -y
+      run: sudo apt update && sudo apt install debootstrap -y
 
     - name: Build ISO
       run: sudo bash ./ghbuild.sh
