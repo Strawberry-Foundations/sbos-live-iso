@@ -114,3 +114,5 @@ mv $BASE_DIR/tmp/amd64/live-image-amd64.hybrid.iso "$OUTPUT_DIR/${FNAME}.iso"
 
 cd $OUTPUT_DIR || exit
 cd $BASE_DIR || exit
+
+echo -e "${cyan}--- Finished --- ${reset}"
