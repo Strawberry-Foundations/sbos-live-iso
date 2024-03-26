@@ -1,4 +1,4 @@
-name: StrawberryOS snapshot
+name: StrawberryOS Snapshot
 
 on:
   workflow_dispatch:
@@ -28,5 +28,5 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: StrawberryOS snapshot
+        name: StrawberryOS-Snapshot
         path: /sbos-live-iso/builds/
