@@ -1,5 +1,3 @@
-rsync
-locales
 zstd
 wget
 curl
