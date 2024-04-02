@@ -3,7 +3,6 @@ locales
 zstd
 wget
 curl
-neofetch
 console-data
 debootstrap
 bubblewrap
