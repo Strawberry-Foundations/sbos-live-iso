@@ -6,7 +6,8 @@ reset=$(echo -e '\033(B\033[m')
 echo -e "${green}
 * ----------------------- *
 | Updating sbos-utilities |
-* ----------------------- * ${reset}"
+* ----------------------- * ${reset}
+"
 
 echo -e "${green}=>${reset} Updating os-bootstrap ..."
 wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/os-bootstrap -O /usr/local/bin/os-bootstrap &> /dev/null
@@ -20,4 +21,4 @@ echo -e "${green}=>${reset} Updating neofetch ..."
 wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/neofetch -O /usr/local/bin/neofetch &> /dev/null
 chmod a+x /usr/local/bin/neofetch
 
-echo -e "${green}=>${reset} Finished util update ..."
+echo -e "${green}=>${reset} Finished util update"
