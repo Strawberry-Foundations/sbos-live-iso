@@ -5,3 +5,6 @@ rm -f /var/lib/apt/lists/*_Packages
 rm -f /var/lib/apt/lists/*_Sources
 rm -f /var/lib/apt/lists/*_Translation-*
 
+apt clean all
+apt autoclean
+apt autoremove -y
