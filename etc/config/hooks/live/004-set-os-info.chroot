@@ -4,9 +4,6 @@
 # Prepare
 distro_pretty_name="@DISTRO_NAME Snapshot @VERSION"
 
-# Set OS name
-echo "$distro_pretty_name /\n /\l" > /etc/issue
-
 # Set OS info
 echo 'PRETTY_NAME="'$distro_pretty_name'"
 NAME="@DISTRO_NAME"
