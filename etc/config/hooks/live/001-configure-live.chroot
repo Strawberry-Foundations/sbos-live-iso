@@ -1,8 +1,7 @@
-wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/os-bootstrap -O /usr/local/bin/os-bootstrap
-chmod a+x /usr/local/bin/os-bootstrap
+#!/bin/sh
+# Description: Configure live iso and install some software that is not available via apt
 
-wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/sbos-chroot -O /usr/local/bin/sbos-chroot
-chmod a+x /usr/local/bin/sbos-chroot
+wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/update-utils -O /usr/local/bin/update-utils
+chmod a+x /usr/local/bin/update-utils
 
-wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/neofetch -O /usr/local/bin/neofetch
-chmod a+x /usr/local/bin/neofetch
+update-utils
