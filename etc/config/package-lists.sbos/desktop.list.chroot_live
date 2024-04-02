@@ -12,3 +12,4 @@ kbd
 grub-efi
 dosfstools
 btrfs-progs
+htop
