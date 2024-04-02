@@ -3,3 +3,6 @@ chmod a+x /usr/local/bin/os-bootstrap
 
 wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/sbos-chroot -O /usr/local/bin/sbos-chroot
 chmod a+x /usr/local/bin/sbos-chroot
+
+vwget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/neofetch -O /usr/local/bin/neofetch
+chmod a+x /usr/local/bin/neofetch
