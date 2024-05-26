@@ -2,7 +2,7 @@
 # Description: Set Vanilla OS name and info
 
 # Prepare
-distro_pretty_name="@DISTRO_NAME Snapshot @VERSION"
+distro_pretty_name="@DISTRO_NAME @VERSION"
 
 # Set OS info
 echo 'PRETTY_NAME="'$distro_pretty_name'"
