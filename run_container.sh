@@ -13,7 +13,7 @@ if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
         docker start $CONTAINER_NAME
     fi
 
-    docker exec "$CONTAINER_NAME" rm -rf /work/*
+    docker exec "$CONTAINER_NAME" rm -rf /work/
 
     docker cp "$TEMP_DIR" "$CONTAINER_NAME":/work
 
