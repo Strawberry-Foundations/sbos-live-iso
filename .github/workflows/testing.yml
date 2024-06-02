@@ -1,0 +1,32 @@
+name: StrawberryOS Beta (Testing)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:testing
+      options: --privileged -it
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install needed packages
+      run: apt update && apt install debootstrap git wget -y
+
+    - name: Build ISO
+      run: |
+        cd /
+        git clone https://github.com/Strawberry-Foundations/sbos-live-iso
+        cd sbos-live-iso
+        chmod a+x /sbos-live-iso/etc/auto/config
+        bash ./build.sh
+        wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/kvm-boot -O /sbos-live-iso/builds/start.sh
+        chmod a+x /sbos-live-iso/builds/start.sh
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: StrawberryOS-Beta
+        path: /sbos-live-iso/builds/
