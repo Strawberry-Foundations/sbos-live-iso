@@ -1,7 +1,9 @@
-zstd
 wget
 curl
+git
+zstd
 debootstrap
+
 
 python3
 htop
