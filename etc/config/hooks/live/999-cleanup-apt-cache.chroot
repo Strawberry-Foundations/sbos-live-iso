@@ -8,3 +8,5 @@ rm -f /var/lib/apt/lists/*_Translation-*
 apt clean all
 apt autoclean
 apt autoremove -y
+
+chmod a+x /usr/bin/update-installer
