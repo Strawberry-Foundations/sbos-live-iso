@@ -5,3 +5,7 @@ wget https://raw.githubusercontent.com/Strawberry-Foundations/sbos-scripts/main/
 chmod a+x /usr/local/bin/update-utils
 
 update-utils
+
+cd /usr/local/share || return
+git clone https://github.com/Strawberry-Foundations/install-sbos
+chmod a+x /usr/bin/install-sbos
