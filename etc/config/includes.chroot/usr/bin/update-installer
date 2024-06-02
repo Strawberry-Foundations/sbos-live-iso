@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm -rf /usr/local/share/install-sbos
+
+cd /usr/local/share || return
+git clone https://github.com/Strawberry-Foundations/install-sbos
+chmod a+x /usr/bin/install-sbos
