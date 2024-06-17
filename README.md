@@ -8,6 +8,13 @@
     </a>
 </div>
 
+## Tested Builds
+You can download tested builds from our [GitHub releases](https://github.com/Strawberry-Foundations/sbos-live-iso/releases). These are usually more stable and have been tested by us developers. 
+
+## Untested Builds
+Untested builds can be downloaded directly from [GitHub Actions](https://github.com/Strawberry-Foundations/sbos-live-iso/actions/workflows/testing.yml). You will need a GitHub account for this. These builds are usually not tested and could therefore be susceptible to bugs.
+
+
 ## Building Locally
 
 The following example uses Docker and assumes you have Docker correctly installed and set up:
