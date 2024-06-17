@@ -22,7 +22,7 @@ The following example uses Docker and assumes you have Docker correctly installe
  1) Clone this project & `cd` into it:
 
     ```
-    $ git clone https://github.com/Strawberry-Foundations/ sbos-live-iso && cd sbos-live-iso
+    $ git clone https://github.com/Strawberry-Foundations/sbos-live-iso && cd sbos-live-iso
     ```
 
  2) Run the build:
