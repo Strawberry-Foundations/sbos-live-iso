@@ -8,6 +8,9 @@
     </a>
 </div>
 
+> [!NOTE]  
+> Want to know what's in store for the future of StrawberryOS? Then take a look at our [TODO](https://github.com/Strawberry-Foundations/sbos-live-iso/blob/main/TODO.md) list!
+
 ## Tested Builds
 You can download tested builds from our [GitHub releases](https://github.com/Strawberry-Foundations/sbos-live-iso/releases). These are usually more stable and have been tested by us developers. 
 
