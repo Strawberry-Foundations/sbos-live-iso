@@ -23,5 +23,4 @@
 
 # Todo's & Ideas for future releases of StrawberryOS
 - Apt tweaking so that apt does not show in userspace that certain packages are NOT going to be upgraded
-    - Option 1: Program your own apt version that no longer displays these packages 
-    - Option 2: When upgrading the system partition, the package differences between user space and system space should be compared and if there are differences between the versions, the newer version or the version from the system space is automatically used
+    - Possible solution: When upgrading the system partition, the package differences between user space and system space should be compared and if there are differences between the versions, the newer version or the version from the system space is automatically used
