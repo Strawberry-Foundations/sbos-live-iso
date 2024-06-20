@@ -24,3 +24,4 @@
 # Todo's & Ideas for future releases of StrawberryOS
 - Apt tweaking so that apt does not show in userspace that certain packages are NOT going to be upgraded
     - Possible solution: When upgrading the system partition, the package differences between user space and system space should be compared and if there are differences between the versions, the newer version or the version from the system space is automatically used
+- Isolated environment for different distrobutions like Arch Linux, ...
