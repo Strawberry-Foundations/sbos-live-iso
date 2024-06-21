@@ -4,7 +4,6 @@ git
 zstd
 debootstrap
 
-
 python3
 htop
 bubblewrap
@@ -21,7 +20,3 @@ btrfs-progs
 wpasupplicant
 network-manager
 modemmanager
-
-firmware-linux
-firmware-linux-nonfree
-firmware-realtek
