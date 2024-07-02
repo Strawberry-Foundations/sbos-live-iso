@@ -19,6 +19,7 @@
 - ✅ Fix dev flags for StrawberryOS installer (Invalid argument parsing)
 - ✅ Fix invalid chroot path for somgr's apt lock feature
 - ✅ Custom /etc/issue
+- ✅ Optional addition of the sudo group to the user
 
 
 # Todo's & Ideas for future releases of StrawberryOS
