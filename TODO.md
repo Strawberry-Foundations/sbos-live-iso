@@ -10,7 +10,6 @@
 ## Needs to be done
 - Custom /etc/motd
 - Restore option for somgr's backup function
-- Logical Volume Manager Setup for System- & Userspace (LVM Groups)
 
 ## Done
 - ✅ Extended Strawberry Cloud support for somgr
@@ -20,6 +19,7 @@
 - ✅ Fix invalid chroot path for somgr's apt lock feature
 - ✅ Custom /etc/issue
 - ✅ Optional addition of the sudo group to the user
+- ✅ Logical Volume Manager Setup for System- & Userspace (LVM Groups)
 
 
 # Todo's & Ideas for future releases of StrawberryOS
