@@ -1,0 +1,13 @@
+# Changelog for upcomming StrawberryOS Beta 4
+
+- NEW: Logical Volume Manager Setup for System- & Userspace (LVM Groups)
+- NEW: Added extended Strawberry Cloud support for somgr
+- NEW: Added a different PS1 variable for userspace
+- NEW: Added custom /etc/issue
+- NEW: Added optional addition of the sudo group to the user (install-sbos)
+- NEW: Added guided disk setup (install-sbos)
+
+- FIX: Fixed install-sbos bash script (Pass arguments)
+- FIX: Fixed dev flags for StrawberryOS installer (Invalid argument parsing)
+- FIX: Fixed invalid chroot path for somgr's apt lock feature
+- FIX: Fixed a lot of bugs in the StrawberryOS installer
