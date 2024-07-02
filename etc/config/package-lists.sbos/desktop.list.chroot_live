@@ -4,7 +4,6 @@ git
 zstd
 debootstrap
 
-
 python3
 htop
 bubblewrap
@@ -17,6 +16,7 @@ grub-efi
 
 dosfstools
 btrfs-progs
+lvm2
 
 wpasupplicant
 network-manager
