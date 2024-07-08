@@ -11,6 +11,6 @@ VERSION_ID="@VERSION"
 VERSION="@VERSION @CHANNEL"
 VERSION_CODENAME="@CODENAME"
 ID=strawberryos
-HOME_URL="https://strawberryfoundations.xyz"
+HOME_URL="https://strawberryfoundations.org"
 SUPPORT_URL="https://github.com/Strawberry-Foundations"
 BUG_REPORT_URL="https://github.com/Strawberry-Foundations"' > /etc/os-release
