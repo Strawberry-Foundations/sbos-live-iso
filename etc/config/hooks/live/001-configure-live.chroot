@@ -8,4 +8,6 @@ update-utils
 
 cd /usr/local/share || return
 git clone https://github.com/Strawberry-Foundations/install-sbos
+
 chmod a+x /usr/bin/install-sbos
+chmod a+x /usr/bin/setup-strawberryos
