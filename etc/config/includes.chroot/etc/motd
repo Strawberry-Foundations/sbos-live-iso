@@ -3,3 +3,4 @@ Welcome to StrawberryOS!
 
 To install StrawberryOS, you can use the 'install-sbos' command.
 To change the keyboard layout, you can use e.g. 'loadkeys de-latin1' (for German keyboard)
+
