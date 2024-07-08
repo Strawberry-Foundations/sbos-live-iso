@@ -7,6 +7,7 @@
 - NEW: Added optional addition of the sudo group to the user (install-sbos)
 - NEW: Added guided disk setup (install-sbos)
 - NEW: Added spkg (beta) to the system (install-sbos)
+- NEW: Added check if the computer is UEFI capable (install-sbos) 
 - NEW: Added apt tweaking so that apt will not show that certain packages are NOT going to be upgraded inside userspace
 
 - FIX: Fixed install-sbos bash script (Pass arguments)
