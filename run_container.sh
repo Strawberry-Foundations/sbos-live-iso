@@ -5,7 +5,7 @@ if [ -e "/work" ]; then
     /bin/bash build.sh
 
 else
-    CONTAINER_NAME=debian-testing
+    CONTAINER_NAME=strawberryos-iso-builder
     IMAGE_NAME=debian:testing
     TEMP_DIR=$(mktemp -d)
 
