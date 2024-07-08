@@ -14,3 +14,9 @@ ID=strawberryos
 HOME_URL="https://strawberryfoundations.org"
 SUPPORT_URL="https://github.com/Strawberry-Foundations/sbos-live-iso"
 BUG_REPORT_URL="https://github.com/Strawberry-Foundations/sbos-live-iso"' > /etc/os-release
+
+
+echo 'StrawberryOS @VERSION (Chocolate Crisps) 
+
+' > /etc/issue
+
