@@ -17,6 +17,4 @@ BUG_REPORT_URL="https://github.com/Strawberry-Foundations/sbos-live-iso"' > /etc
 
 
 echo 'StrawberryOS @VERSION @CHANNEL (@CODENAME) 
-
 ' > /etc/issue
-
