@@ -16,6 +16,8 @@ grub-efi
 
 dosfstools
 btrfs-progs
+lvm2
+parted
 
 wpasupplicant
 network-manager

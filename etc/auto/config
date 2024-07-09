@@ -65,4 +65,10 @@ sed -i "s/@CHANNEL/$CHANNEL/" config/hooks/live/004-set-os-info.chroot
 sed -i "s/@CODENAME/$CODENAME/" config/hooks/live/004-set-os-info.chroot
 sed -i "s/@BASECODENAME/$BASECODENAME/" config/hooks/live/004-set-os-info.chroot
 
+sed -i "s/@DISTRO_NAME/$NAME/" config/bootloaders/grub-pc/grub.cfg
+sed -i "s/@VERSION/$VERSION/" config/bootloaders/grub-pc/grub.cfg
+sed -i "s/@CHANNEL/$CHANNEL/" config/bootloaders/grub-pc/grub.cfg
+sed -i "s/@CODENAME/$CODENAME/" config/bootloaders/grub-pc/grub.cfg
+sed -i "s/@BASECODENAME/$BASECODENAME/" config/bootloaders/grub-pc/grub.cfg
+
 # sed -i "s/@XORG_HWE/$XORG_HWE/" config/package-lists/desktop.list.chroot_install

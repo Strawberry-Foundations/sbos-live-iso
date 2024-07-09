@@ -8,9 +8,7 @@
 
 # Todo's for the next release of StrawberryOS (Beta 4)
 ## Needs to be done
-- Recovery mode for StrawberryOS
-- Custom /etc/motd
-- Restore option for somgr's backup function
+\-
 
 ## Done
 - ✅ Extended Strawberry Cloud support for somgr
@@ -19,9 +17,15 @@
 - ✅ Fix dev flags for StrawberryOS installer (Invalid argument parsing)
 - ✅ Fix invalid chroot path for somgr's apt lock feature
 - ✅ Custom /etc/issue
-
+- ✅ Optional addition of the sudo group to the user
+- ✅ Logical Volume Manager Setup for System- & Userspace (LVM Groups)
+- ✅ spkg installation while bootstrapping StrawberryOS
+- ✅ Apt tweaking so that apt does not show in userspace that certain packages are NOT going to be upgraded
+    - ✅ Possible solution: When upgrading the system partition, the package differences between user space and system space should be compared and if there are differences between the versions, the newer version or the version from the system space is automatically used
 
 # Todo's & Ideas for future releases of StrawberryOS
-- Apt tweaking so that apt does not show in userspace that certain packages are NOT going to be upgraded
-    - Possible solution: When upgrading the system partition, the package differences between user space and system space should be compared and if there are differences between the versions, the newer version or the version from the system space is automatically used
 - Isolated environment for different distrobutions like Arch Linux, ...
+- Recovery mode for StrawberryOS
+- Restore option for somgr's backup function
+- Custom /etc/motd
+- Spkg for managing packages
