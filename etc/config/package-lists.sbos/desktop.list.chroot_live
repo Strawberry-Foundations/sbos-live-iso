@@ -5,6 +5,7 @@ zstd
 debootstrap
 
 python3
+python3-rich
 htop
 bubblewrap
 
