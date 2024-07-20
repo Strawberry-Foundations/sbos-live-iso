@@ -22,6 +22,7 @@
 - ISO: Updated /etc/motd
 - ISO: General improvements
 - ISO: New Installer UI
+- ISO: Added selection buttons for keyboard layout 
 - ISO: Build version now in grub boot menu
 
 - FUTURE: Started development for envmgr (Manage chroot environments)
