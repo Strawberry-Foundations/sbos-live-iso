@@ -37,9 +37,13 @@ echo -e "${green}
 "
 if [[ ! $1 == "--pass-apt" ]]; then
   echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt update${reset}' ${RESET}"
-  echo -e "${green}=>${reset} $ apt update"
   apt update
   echo ""
+
+  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt upgrade -y${reset}' ${RESET}"
+  apt upgrade -y
+  echo ""
+
   echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt install -y live-build gnupg2 binutils zstd ca-certificates${reset}' ${RESET}"
   apt install -y live-build gnupg2 binutils zstd ca-certificates
 else
