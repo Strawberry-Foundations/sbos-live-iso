@@ -35,3 +35,6 @@ The following example uses Docker and assumes you have Docker correctly installe
     ```
 
  3) When done, your image will be in the `builds` folder.
+
+> [!NOTE]  
+> If you create a second build, you should delete the builds folder or move the contents so that the ISOs are not copied into the container
