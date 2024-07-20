@@ -8,7 +8,13 @@ cyan=$(echo -e '\033[1m\e[36m')
 bold=$(echo -e '\033[1m')
 reset=$(echo -e '\033(B\033[m')
 
-version="1.0.0"
+YELLOW_BACK="\e[43m"
+GREEN_BACK="\e[42m"
+RED_BACK="\e[41m"
+RESET="\e[0m"
+
+
+version="1.1.0"
 
 # Init
 CONFIG_FILE="config.conf"
@@ -17,7 +23,7 @@ source "$BASE_DIR"/"$CONFIG_FILE"
 
 # Check for root permissions
 if [[ "$(id -u)" != 0 ]]; then
-  echo -e "${red}[!] ${bold}Requires root permissions${reset}"
+  echo -e "${RED_BACK}${bold}   ERROR   ${RESET}${bold}  Requires root permissions${reset}"
   exit 1
 fi
 
@@ -30,13 +36,14 @@ echo -e "${green}
 * ---------------------------- * ${reset}
 "
 if [[ ! $1 == "--pass-apt" ]]; then
+  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt update${reset}' ${RESET}"
   echo -e "${green}=>${reset} $ apt update"
   apt update
   echo ""
-  echo -e "${green}=>${reset} $ apt install -y live-build gnupg2 binutils zstd ca-certificates"
+  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt install -y live-build gnupg2 binutils zstd ca-certificates${reset}' ${RESET}"
   apt install -y live-build gnupg2 binutils zstd ca-certificates
 else
-  echo -e "${yellow}=>${reset} Skipping host tool installation"
+  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Skipping host tool installation${RESET}"
 fi
 
 
@@ -48,20 +55,20 @@ echo -e "${green}
 "
 
 # Remove old tmp directroy
-echo -e "${green}=>${reset} Removing old temp directory"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Removing old temp directory${RESET}"
 rm -rf tmp
 
 # Create new tmp directory 
-echo -e "${green}=>${reset} Creating new temp directory"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Creating new temp directory${RESET}"
 mkdir -p "$BASE_DIR/tmp/$ARCH"
 cd "$BASE_DIR/tmp/$ARCH" || exit
 
 # Copy new config
-echo -e "${green}=>${reset} Copying new config files to it"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Copying new config files to it${RESET}"
 cp -r "$BASE_DIR"/etc/* .
 cp -f "$BASE_DIR"/"$CONFIG_FILE" .
 
-echo -e "${green}=>${reset} Symlinking package lists"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Symlinking package lists${RESET}"
 ln -s "package-lists.$PACKAGE_LISTS_SUFFIX" "config/package-lists"
 
 
@@ -72,7 +79,7 @@ echo -e "${green}
 * ------------------ * ${reset}
 "
 
-echo -e "${green}=>${reset} $ lb clean"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb clean${reset}' ${RESET}"
 lb clean
 
 
@@ -83,7 +90,7 @@ echo -e "${green}
 * ---------------------- * ${reset}
 "
 
-echo -e "${green}=>${reset} $ lb config"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb config${reset}' ${RESET}"
 lb config
 
 
@@ -94,7 +101,7 @@ echo -e "${green}
 * ------------------ * ${reset}
 "
 
-echo -e "${green}=>${reset} $ lb build"
+echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb build${reset}' ${RESET}"
 lb build
 
 
