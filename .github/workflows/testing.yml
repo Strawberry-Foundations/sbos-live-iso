@@ -1,4 +1,4 @@
-name: StrawberryOS Beta (Testing)
+name: StrawberryOS Release Builds (Testing)
 
 on:
   workflow_dispatch:
