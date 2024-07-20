@@ -1,4 +1,4 @@
-name: StrawberryOS Snapshot
+name: StrawberryOS Snapshot (Unstable)
 
 on:
   workflow_dispatch:
