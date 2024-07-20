@@ -24,8 +24,8 @@
     - ✅ Possible solution: When upgrading the system partition, the package differences between user space and system space should be compared and if there are differences between the versions, the newer version or the version from the system space is automatically used
 
 # Todo's & Ideas for future releases of StrawberryOS
-- Isolated environment for different distrobutions like Arch Linux, ...
-- Recovery mode for StrawberryOS
+- Isolated environment for different distrobutions like Arch Linux, ... (envmgr)
+- Recovery mode for StrawberryOS (sbos-recovery)
 - Restore option for somgr's backup function
 - Custom /etc/motd
 - Spkg for managing packages
