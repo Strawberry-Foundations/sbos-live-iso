@@ -14,3 +14,5 @@ alias la='ls -A'
 alias l='ls -CF'
 
 PS1='\[\e[0m\][\[\e[0;1;91m\]\u\[\e[0;1;38;5;226m\]@\[\e[0;1;96m\]\H \[\e[0;1;38;5;161m\]\w\[\e[0m\]] \[\e[0;1m\]\$ \[\e[0m\]'
+
+python3 /usr/local/share/install-sbos/__main__.py
