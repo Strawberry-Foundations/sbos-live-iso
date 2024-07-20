@@ -22,6 +22,7 @@
 - ISO: Updated /etc/motd
 - ISO: General improvements
 - ISO: New Installer UI
+- ISO: Build version now in grub boot menu
 
 - FUTURE: Started development for envmgr (Manage chroot environments)
 - FUTURE: Started development for a2bpkg (Convert common archive types to binpkg files)
