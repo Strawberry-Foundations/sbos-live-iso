@@ -9,13 +9,19 @@
 - NEW: Added spkg (beta) to the system (install-sbos)
 - NEW: Added check if the computer is UEFI capable (install-sbos) 
 - NEW: Added apt tweaking so that apt will not show that certain packages are NOT going to be upgraded inside userspace
+- NEW: Added bash completions for somgr & other programs
 
 - FIX: Fixed install-sbos bash script (Pass arguments)
 - FIX: Fixed dev flags for StrawberryOS installer (Invalid argument parsing)
 - FIX: Fixed invalid chroot path for somgr's apt lock feature
 - FIX: Fixed a lot of bugs in the StrawberryOS installer
 - FIX: Fixed invalid domain names
+- FIX: Fixed busy mount while updating system
 
-- LIVE: New Linux Kernel (6.9.x)
-- LIVE: Updated /etc/motd
-- LIVE: General improvements
+- ISO: New Linux Kernel (6.9.x)
+- ISO: Updated /etc/motd
+- ISO: General improvements
+- ISO: New Installer UI
+
+- FUTURE: Started development for envmgr (Manage chroot environments)
+- FUTURE: Started development for a2bpkg (Convert common archive types to binpkg files)
