@@ -1,29 +1,11 @@
-# Changelog for upcomming StrawberryOS Beta 4
+# Changelog for upcomming StrawberryOS Beta 5
 
-- NEW: Logical Volume Manager Setup for System- & Userspace (LVM Groups)
-- NEW: Added extended Strawberry Cloud support for somgr
-- NEW: Added a different PS1 variable for userspace
-- NEW: Added custom /etc/issue
-- NEW: Added optional addition of the sudo group to the user (install-sbos)
-- NEW: Added guided disk setup (install-sbos)
-- NEW: Added spkg (beta) to the system (install-sbos)
-- NEW: Added check if the computer is UEFI capable (install-sbos) 
-- NEW: Added apt tweaking so that apt will not show that certain packages are NOT going to be upgraded inside userspace
-- NEW: Added bash completions for somgr & other programs
+- NEW: 
 
-- FIX: Fixed install-sbos bash script (Pass arguments)
-- FIX: Fixed dev flags for StrawberryOS installer (Invalid argument parsing)
-- FIX: Fixed invalid chroot path for somgr's apt lock feature
-- FIX: Fixed a lot of bugs in the StrawberryOS installer
-- FIX: Fixed invalid domain names
-- FIX: Fixed busy mount while updating system
+- FIX: Fix wrong GRUB distributor
+- FIX: Fix not configuring proper hostname
 
-- ISO: New Linux Kernel (6.9.x)
-- ISO: Updated /etc/motd
-- ISO: General improvements
-- ISO: New Installer UI
-- ISO: Added selection buttons for keyboard layout 
-- ISO: Build version now in grub boot menu
-
-- FUTURE: Started development for envmgr (Manage chroot environments)
-- FUTURE: Started development for a2bpkg (Convert common archive types to binpkg files)
+- ISO: Add update function for StrawberryOS Installer
+- ISO: UI improvements for Installer
+ 
+- FUTURE: 
