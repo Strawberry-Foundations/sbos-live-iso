@@ -8,12 +8,11 @@
 
 # Todo's for the next release of StrawberryOS (Beta 5)
 ## Needs to be done
-- BTRFS Support
 - StrawberryOS Recovery
 - Fix 'stale file handle' error (dpkg->somgr)
 
 ## Done
-\-
+- BTRFS Support
 
 # Todo's & Ideas for future releases of StrawberryOS
 - Isolated environment for different distrobutions like Arch Linux, ... (envmgr)
