@@ -17,7 +17,8 @@
 # Todo's & Ideas for future releases of StrawberryOS
 | Priority | Todo/ Idea               |
 | -------- | ------------------------ |
-| High | Spkg for managing packages
+| High   | Spkg for managing packages
 | Medium | StrawberryOS Recovery
 | Medium | Isolated environment for different distrobutions like Arch Linux, ... (envmgr)
-| Low | Restore option for somgr's backup function
+| Medium | Autoinstall via yaml or json file
+| Low    | Restore option for somgr's backup function
