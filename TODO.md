@@ -6,18 +6,18 @@
     <br><br>
 </div>
 
-# Todo's for the next release of StrawberryOS (Beta 5)
+# Todo's for the next release of StrawberryOS (Beta 6)
 ## Needs to be done
-\- 
+- Custom /etc/motd
+- Build-in `binpkg` command
 
 ## Done
-- BTRFS Support
-- Fix 'stale file handle' error (dpkg->somgr)
-- Fix 'somgr update' errors (mainly because of dependencies)
+\-
 
 # Todo's & Ideas for future releases of StrawberryOS
-- Isolated environment for different distrobutions like Arch Linux, ... (envmgr)
-- Restore option for somgr's backup function
-- Custom /etc/motd
-- Spkg for managing packages
-- StrawberryOS Recovery
+| Priority | Todo/ Idea               |
+| -------- | ------------------------ |
+| High | StrawberryOS Recovery
+| Medium | Isolated environment for different distrobutions like Arch Linux, ... (envmgr)
+| Medium | Spkg for managing packages
+| Low | Restore option for somgr's backup function
