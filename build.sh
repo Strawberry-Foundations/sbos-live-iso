@@ -49,7 +49,9 @@ echo -e "${green}
 | Installing host dependencies |
 * ---------------------------- * ${reset}
 "
-if [[ ! $1 == "--skip-apt" ]]; then
+if [[ "${1:-}" == "--skip-apt" ]]; then
+    log_info "Skipping host tool installation"
+else
     log_info "Running 'apt update'"
     apt update
 
@@ -58,8 +60,6 @@ if [[ ! $1 == "--skip-apt" ]]; then
 
     log_info "Running 'apt install -y live-build gnupg2 binutils zstd ca-certificates'"
     apt install -y live-build gnupg2 binutils zstd ca-certificates
-else
-    log_info "Skipping host tool installation"
 fi
 
 # Preparing build
