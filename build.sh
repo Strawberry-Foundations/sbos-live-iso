@@ -12,6 +12,14 @@ GREEN_BACK="\e[42m"
 RED_BACK="\e[41m"
 RESET="\e[0m"
 
+version="1.2.0"
+
+# Init
+CONFIG_FILE="config.conf"
+BASE_DIR="${PWD}"
+
+echo -e "${cyan}--- StrawberryOS ISO Builder v${version} --- ${reset}"
+
 # Logger functions
 log_info() {
     echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  $1${reset}"
@@ -25,11 +33,12 @@ log_warn() {
     echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  $1${reset}"
 }
 
-version="1.2.0"
+if [[ ! -f "${BASE_DIR}/${CONFIG_FILE}" ]]; then
+    log_error "Configuration file ${CONFIG_FILE} not found!"
+    exit 1
+fi
 
-# Init
-CONFIG_FILE="config.conf"
-BASE_DIR="${PWD}"
+log_info "Loading configuration from ${BASE_DIR}/${CONFIG_FILE}"
 source "${BASE_DIR}/${CONFIG_FILE}"
 
 # Check for root permissions
@@ -37,8 +46,6 @@ if [[ ${EUID} -ne 0 ]]; then
     log_error "Requires root permissions"
     exit 1
 fi
-
-echo -e "${cyan}--- StrawberryOS ISO Builder v${version} --- ${reset}"
 
 # Installing host dependencies
 echo -e "${green}
@@ -128,7 +135,7 @@ echo -e "${green}
 "
 
 YYYYMMDD="$(date +%Y%m%d)"
-OUTPUT_DIR="${BASE_DIR}/builds/${BUILD_ARCH}"
+OUTPUT_DIR="${BASE_DIR}/builds/${ARCH}"
 mkdir -p "${OUTPUT_DIR}"
 FNAME="StrawberryOS-${VERSION}-${CHANNEL}.${YYYYMMDD}${OUTPUT_SUFFIX}"
 mv "${BASE_DIR}/tmp/amd64/live-image-amd64.hybrid.iso" "${OUTPUT_DIR}/${FNAME}.iso"
