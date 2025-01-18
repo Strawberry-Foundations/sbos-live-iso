@@ -95,7 +95,17 @@ echo -e "${green}
 "
 
 echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb config${reset}' ${RESET}"
-lb config
+if ! lb config 2>&1 | while IFS= read -r line; do
+  if [[ $line =~ ^W.* ]]; then
+    echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  $line${reset}"
+    echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  Warnings in this stage shouldn't be ignored. Exiting.${reset}"
+    exit 1
+  else
+    echo "$line"
+  fi
+done; then
+  exit 1
+fi
 
 
 # Live-Build Config
