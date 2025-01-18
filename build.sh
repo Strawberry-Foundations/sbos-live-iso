@@ -25,7 +25,7 @@ log_warn() {
     echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  $1${reset}"
 }
 
-version="1.1.0"
+version="1.2.0"
 
 # Init
 CONFIG_FILE="config.conf"
