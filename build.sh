@@ -2,10 +2,7 @@
 
 set -euo pipefail
 
-red=$(echo -e '\e[31m')
 green=$(echo -e '\e[32m')
-yellow=$(echo -e '\e[1;33m')
-# underscore=$(echo -e '\033[4m')
 cyan=$(echo -e '\033[1m\e[36m')
 bold=$(echo -e '\033[1m')
 reset=$(echo -e '\033(B\033[m')
