@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 red=$(echo -e '\e[31m')
 green=$(echo -e '\e[32m')
 yellow=$(echo -e '\e[1;33m')
@@ -13,18 +15,30 @@ GREEN_BACK="\e[42m"
 RED_BACK="\e[41m"
 RESET="\e[0m"
 
+# Logger functions
+log_info() {
+    echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  $1${reset}"
+}
+
+log_error() {
+    echo -e "${RED_BACK}${bold}  ERROR  ${RESET}${bold}  $1${reset}"
+}
+
+log_warn() {
+    echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  $1${reset}"
+}
 
 version="1.1.0"
 
 # Init
 CONFIG_FILE="config.conf"
-BASE_DIR="$PWD"
-source "$BASE_DIR"/"$CONFIG_FILE"
+BASE_DIR="${PWD}"
+source "${BASE_DIR}/${CONFIG_FILE}"
 
 # Check for root permissions
-if [[ "$(id -u)" != 0 ]]; then
-  echo -e "${RED_BACK}${bold}   ERROR   ${RESET}${bold}  Requires root permissions${reset}"
-  exit 1
+if [[ ${EUID} -ne 0 ]]; then
+    log_error "Requires root permissions"
+    exit 1
 fi
 
 echo -e "${cyan}--- StrawberryOS ISO Builder v${version} --- ${reset}"
@@ -36,20 +50,17 @@ echo -e "${green}
 * ---------------------------- * ${reset}
 "
 if [[ ! $1 == "--skip-apt" ]]; then
-  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt update${reset}' ${RESET}"
-  apt update
-  echo ""
+    log_info "Running 'apt update'"
+    apt update
 
-  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt upgrade -y${reset}' ${RESET}"
-  apt upgrade -y
-  echo ""
+    log_info "Running 'apt upgrade -y'"
+    apt upgrade -y
 
-  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt install -y live-build gnupg2 binutils zstd ca-certificates${reset}' ${RESET}"
-  apt install -y live-build gnupg2 binutils zstd ca-certificates
+    log_info "Running 'apt install -y live-build gnupg2 binutils zstd ca-certificates'"
+    apt install -y live-build gnupg2 binutils zstd ca-certificates
 else
-  echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Skipping host tool installation${RESET}"
+    log_info "Skipping host tool installation"
 fi
-
 
 # Preparing build
 echo -e "${green}
@@ -58,23 +69,19 @@ echo -e "${green}
 * --------------- * ${reset}
 "
 
-# Remove old tmp directroy
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Removing old temp directory${RESET}"
+log_info "Removing old temp directory"
 rm -rf tmp
 
-# Create new tmp directory 
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Creating new temp directory${RESET}"
-mkdir -p "$BASE_DIR/tmp/$ARCH"
-cd "$BASE_DIR/tmp/$ARCH" || exit
+log_info "Creating new temp directory"
+mkdir -p "${BASE_DIR}/tmp/${ARCH}"
+cd "${BASE_DIR}/tmp/${ARCH}" || exit
 
-# Copy new config
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Copying new config files to it${RESET}"
-cp -r "$BASE_DIR"/etc/* .
-cp -f "$BASE_DIR"/"$CONFIG_FILE" .
+log_info "Copying new config files to it"
+cp -r "${BASE_DIR}"/etc/* .
+cp -f "${BASE_DIR}/${CONFIG_FILE}" .
 
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Symlinking package lists${RESET}"
-ln -s "package-lists.$PACKAGE_LISTS_SUFFIX" "config/package-lists"
-
+log_info "Symlinking package lists"
+ln -s "package-lists.${PACKAGE_LISTS_SUFFIX}" "config/package-lists"
 
 # Live-Build Clean
 echo -e "${green}
@@ -83,9 +90,8 @@ echo -e "${green}
 * ------------------ * ${reset}
 "
 
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb clean${reset}' ${RESET}"
+log_info "Running 'lb clean'"
 lb clean
-
 
 # Live-Build Config
 echo -e "${green}
@@ -94,31 +100,28 @@ echo -e "${green}
 * ---------------------- * ${reset}
 "
 
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb config${reset}' ${RESET}"
+log_info "Running 'lb config'"
 if ! lb config 2>&1 | while IFS= read -r line; do
-  if [[ $line =~ ^W.* ]]; then
-    echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  $line${reset}"
-    echo -e "${YELLOW_BACK}${bold}  WARN  ${RESET}${bold}  Warnings in this stage shouldn't be ignored. Exiting.${reset}"
-    exit 1
-  else
-    echo "$line"
-  fi
+    if [[ $line =~ ^W.* ]]; then
+        log_warn "$line"
+        log_warn "Warnings in this stage shouldn't be ignored. Exiting."
+        exit 1
+    else
+        echo "$line"
+    fi
 done; then
-  exit 1
+    exit 1
 fi
 
-
-# Live-Build Config
+# Live-Build Build
 echo -e "${green}
 * ------------------ *
 | [Live Build] Build |
 * ------------------ * ${reset}
 "
 
-echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}lb build${reset}' ${RESET}"
+log_info "Running 'lb build'"
 lb build
-
-
 
 # Move Output to build dir
 echo -e "${green}
@@ -128,12 +131,12 @@ echo -e "${green}
 "
 
 YYYYMMDD="$(date +%Y%m%d)"
-OUTPUT_DIR="$BASE_DIR/builds/$BUILD_ARCH"
-mkdir -p "$OUTPUT_DIR"
-FNAME="StrawberryOS-$VERSION-$CHANNEL.$YYYYMMDD$OUTPUT_SUFFIX"
-mv $BASE_DIR/tmp/amd64/live-image-amd64.hybrid.iso "$OUTPUT_DIR/${FNAME}.iso"
+OUTPUT_DIR="${BASE_DIR}/builds/${BUILD_ARCH}"
+mkdir -p "${OUTPUT_DIR}"
+FNAME="StrawberryOS-${VERSION}-${CHANNEL}.${YYYYMMDD}${OUTPUT_SUFFIX}"
+mv "${BASE_DIR}/tmp/amd64/live-image-amd64.hybrid.iso" "${OUTPUT_DIR}/${FNAME}.iso"
 
-cd $OUTPUT_DIR || exit
-cd $BASE_DIR || exit
+cd "${OUTPUT_DIR}" || exit
+cd "${BASE_DIR}" || exit
 
 echo -e "${cyan}--- Finished --- ${reset}"
