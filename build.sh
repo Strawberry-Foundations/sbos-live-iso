@@ -35,7 +35,7 @@ echo -e "${green}
 | Installing host dependencies |
 * ---------------------------- * ${reset}
 "
-if [[ ! $1 == "--pass-apt" ]]; then
+if [[ ! $1 == "--skip-apt" ]]; then
   echo -e "${GREEN_BACK}${bold}  INFO  ${RESET}${bold}  Running '${cyan}apt update${reset}' ${RESET}"
   apt update
   echo ""
