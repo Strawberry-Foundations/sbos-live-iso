@@ -5,7 +5,7 @@ set -e
 . ./config.conf
 
 
-KERNEL_FLAVORS="amd64"
+KERNEL_FLAVORS="arm64"
 
 
 lb config noauto \
