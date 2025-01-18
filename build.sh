@@ -138,7 +138,7 @@ YYYYMMDD="$(date +%Y%m%d)"
 OUTPUT_DIR="${BASE_DIR}/builds/${ARCH}"
 mkdir -p "${OUTPUT_DIR}"
 FNAME="StrawberryOS-${VERSION}-${CHANNEL}.${YYYYMMDD}${OUTPUT_SUFFIX}"
-mv "${BASE_DIR}/tmp/amd64/live-image-amd64.hybrid.iso" "${OUTPUT_DIR}/${FNAME}.iso"
+mv "${BASE_DIR}/tmp/arm64/live-image-arm64.hybrid.iso" "${OUTPUT_DIR}/${FNAME}.iso"
 
 cd "${OUTPUT_DIR}" || exit
 cd "${BASE_DIR}" || exit
